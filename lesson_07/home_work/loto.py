@@ -57,3 +57,21 @@
 модуль random: http://docs.python.org/3/library/random.html
 
 """
+
+import random
+import sys
+import time
+
+class Кegs:
+#Достаем бочонки
+    def a(self):
+        lst = [i for i in range(1, self.amount + 1)]
+        random.shuffle(lst)
+        for x, y in enumerate(lst):
+            print('{:*^30}'.format('*'))
+            print('Новый бочонок: {} (осталось {})'.format(y, self.amount - (x+1)))
+            yield y
+
+    def __init__(self, amount):
+        self.amount = amount
+        self.gen = self.f()
